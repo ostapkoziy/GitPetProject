@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Client>
+		<name>Ostap Koziy</name>
+		<phoneNumber>097 609-24-53</phoneNumber>
+		<adress>Lviv, Grinchenka str. 11a/25</adress>
+	</Client>
+	
+	<Client>
+		<name>Batiuk Danylo</name>
+		<phoneNumber>097 123-45-67</phoneNumber>
+		<adress>Lviv, St. Jura sqr. 10/5</adress>
+	</Client>
+	<Client>
+		<name>Makoviak Roman</name>
+		<phoneNumber>063 021-01-01</phoneNumber>
+		<adress>Lviv, Zerova str. 9/2</adress>
+	</Client>
+</Clients>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Client>
+		<name>John Mayer</name>
+		<phoneNumber>050 125-55-62</phoneNumber>
+		<adress>Kyiv, Glushkova str. 12/12</adress>
+	</Client>
+	<Client>
+		<name>Alan Smith</name>
+		<phoneNumber>067 124-26-77</phoneNumber>
+		<adress>Stoneford, 27</adress>
+	</Client>
+	<Client>
+		<name>Ryan Giggs</name>
+		<phoneNumber>063 123-67-15</phoneNumber>
+		<adress>Lviv, Chervona str. 14\1</adress>
+	</Client>
+</Clients>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Client>
+		<name>Lavinska Olga</name>
+		<phoneNumber>093 666-12-44</phoneNumber>
+		<adress>Lviv, Vygovskogo str. 13\13</adress>
+	</Client>
+	<Client>
+		<name>Fedoryshyn Yaryna</name>
+		<phoneNumber>050 117-85-00</phoneNumber>
+		<adress>Lviv, Kulparkivska str. 124\88</adress>
+	</Client>
+</Clients>

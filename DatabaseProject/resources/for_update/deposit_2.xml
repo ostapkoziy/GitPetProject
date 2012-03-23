@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Deposit>
+		<client>Lavinska Olia</client>
+		<cash>5000000</cash>
+		<percent>2.2</percent>
+	</Deposit>
+	<Deposit>
+		<client>John Mayer</client>
+		<cash>123456789</cash>
+		<percent>5.9</percent>
+	</Deposit>
+	<Deposit>
+		<client>Fedoryshyn Yaryna</client>
+		<cash>424242</cash>
+		<percent>15.9</percent>
+	</Deposit>
+	<Deposit>
+		<client>Kisel Dima</client>
+		<cash>123000</cash>
+		<percent>7.0</percent>
+	</Deposit>
+</Deposits>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<Client>
+		<name>Dima Kisel</name>
+		<phoneNumber>050 125-55-66</phoneNumber>
+		<adress>Yaniv, Lvivska str. 55\12</adress>
+	</Client>
+	<Client>
+		<name>Gelesh Yuriy</name>
+		<phoneNumber>067 124-26-77</phoneNumber>
+		<adress>Stoneford, 77</adress>
+	</Client>
+	<Client>
+		<name>Tabun Oleg</name>
+		<phoneNumber>063 123-67-15</phoneNumber>
+		<adress>Lviv, Zolota str. 13\1</adress>
+	</Client>
+</Clients>

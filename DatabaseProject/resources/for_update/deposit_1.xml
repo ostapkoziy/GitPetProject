@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Deposit>
+		<client>Ostap Koziy</client>
+		<cash>10000</cash>
+		<percent>4.2</percent>
+	</Deposit>
+	<Deposit>
+		<client>Batiuk Danylo</client>
+		<cash>8000</cash>
+		<percent>3.5</percent>
+	</Deposit>
+</Depositss>

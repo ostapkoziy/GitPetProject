@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Client>
+		<name>Ostap Koziy</name>
+		<phoneNumber>097 609-24-53</phoneNumber>
+		<adress>Lviv, Grinchenka str. 11a/25</adress>
+	</Client>
+	<Client>
+		<name>Vasserman Anatoliy</name>
+		<phoneNumber>097 111-22-22</phoneNumber>
+		<adress>Moscow, Red Square, 1/1</adress>
+	</Client>
+	<Client>
+		<name>Doroshenko Maksym</name>
+		<phoneNumber>063 251-55-02</phoneNumber>
+		<adress>Ternopil, Zelena str. 129/32</adress>
+	</Client>
+</Clients>
