@@ -6,7 +6,9 @@ import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -16,6 +18,7 @@ public class SearchMenu implements SubMenu {
 	private static final Logger LOG = Logger.getLogger(SearchMenu.class);
 	private BufferedReader in = new BufferedReader(new InputStreamReader(
 			System.in));
+	private Map<Integer, String> depositMap = new HashMap<Integer, String>();
 
 	@Override
 	public void show() {
@@ -89,6 +92,7 @@ public class SearchMenu implements SubMenu {
 		}
 		if ((i > 0) && (i < 4)) {
 			DbManager dbm = new DbManager();
+			String userName = "";
 			ResultSet rs = dbm
 					.select("SELECT Name, Adress, Phone FROM Clients "
 							+ "WHERE " + clientMap.get(i) + " = '" + value
@@ -99,10 +103,13 @@ public class SearchMenu implements SubMenu {
 					String name = rs.getString("Name");
 					String adress = rs.getString("Adress");
 					String phone = rs.getString("Phone");
+					userName = name;
 					System.out.format("%-20s\t\t%30s\t%20s\n", name, adress,
 							phone);
 				}
-				rs.close();
+				rs.close();		
+				System.out.println("\n"+userName+" has next deposits: \n");
+				this.findDeposit(1, userName);
 			} catch (SQLException e) {
 				LOG.error("SQL Error while searching");
 			} catch (NullPointerException e) {
@@ -114,8 +121,7 @@ public class SearchMenu implements SubMenu {
 	}
 
 	private void searchDeposits() {
-		Map<Integer, String> depositMap = new HashMap<Integer, String>();
-		depositMap.put(1, "Name");
+		depositMap.put(1, "UserName");
 		depositMap.put(2, "Cash");
 		depositMap.put(3, "Percent");
 		System.out.println("\nType '1' if you want to search by "
@@ -154,27 +160,31 @@ public class SearchMenu implements SubMenu {
 			this.show();
 		}
 		if ((i > 0) && (i < 4)) {
-			DbManager dbm = new DbManager();
-			ResultSet rs = dbm
-					.select("SELECT UserName, Percent, Cash FROM Deposits "
-							+ "WHERE " + depositMap.get(i) + " = '" + value
-							+ "'");
-			try {
-				System.out.println("The search results are: \n");
-				while (rs.next()) {
-					String name = rs.getString("UserName");
-					String cash = rs.getString("Cash");
-					String percent = rs.getString("Percent");
-					System.out.format("%-20s\t\t%30s\t%20s\n", name, cash,
-							percent);
-				}
-				rs.close();
-			} catch (SQLException e) {
-				LOG.error("SQL Error while searching");
-			} catch (NullPointerException e) {
-				System.out.println("No results to display!");
+			this.findDeposit(i,value);
 			}
 			this.show();
 		}
+
+	private void findDeposit(int i, String value) {
+		DbManager dbm = new DbManager();
+		ResultSet rs = dbm
+				.select("SELECT UserName, Percent, Cash FROM Deposits "
+						+ "WHERE " + depositMap.get(i) + " LIKE '" + value
+						+ "'");
+		try {
+			while (rs.next()) {
+				String name = rs.getString("UserName");
+				String cash = rs.getString("Cash");
+				String percent = rs.getString("Percent");
+				System.out.format("%-20s\t\t%30s\t%20s\n", name, cash,
+						percent);
+			}
+			rs.close();
+		} catch (SQLException e) {
+			LOG.error("SQL Error while searching");
+		} catch (NullPointerException e) {
+			System.out.println("No results to display!");
+		
+	}
 	}
 }

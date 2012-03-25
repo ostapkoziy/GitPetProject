@@ -14,9 +14,9 @@ public class DomHandler {
             System.out.println(text);
         }
 		NamedNodeMap attributes = node.getAttributes();
-		Node nameAttrib = attributes.getNamedItem("name");
+		Node nameAttrib = attributes.getNamedItem("client");
 		String name = nameAttrib.getTextContent();
-		System.out.println("OLOLO^ "+ name);
+		System.out.println("OLOLO - "+ name);
       
         NodeList children = node.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {

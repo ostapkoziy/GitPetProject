@@ -75,6 +75,9 @@ public class FileUpdater implements Runnable {
 			}
 		} catch (SQLException e) {
 			LOG.error("SQL Exception while getting new client file list", e);
+		} catch (NullPointerException e){
+			//no modifications to the database occured
+			//exception ignored
 		}
 		Set<File> filesInDbSet = new TreeSet<File>();
 		filesInDbSet.addAll(filesInDb);
@@ -176,7 +179,7 @@ public class FileUpdater implements Runnable {
 			bufer.removeAll(folderFiles);
 			this.removeMissingFilesDeposits(bufer);
 		} else {
-			this.checkForModificationsDeposits();
+			this.checkForModificationsDeposit();
 		}
 	}
 	
@@ -190,21 +193,20 @@ public class FileUpdater implements Runnable {
 		for (File i : missingFiles) {
 			String fName = i.getPath();
 			fName = XmlDataBaseConvertor.convertDbName(fName);
-			dbm.delete("DELETE FROM Deposits WHERE FileName LIKE '" + fName
-					+ "'");
+			dbm.delete("DELETE FROM Deposits WHERE FileName LIKE '"+fName+"'");
 		}
 	}
-	private void checkForModificationsDeposits() {
+	private void checkForModificationsDeposit() {
 		List<File> folderFiles = this.getFolderFilesDeposit(new File(
 				"resources\\for_update"));
 		for (int i = 0; i < folderFiles.size(); i++) {
 			if (folderFiles.get(i).lastModified() > this.modifiedTime) {
-				this.storeModifiedFileDeposits(folderFiles.get(i));
+				this.storeModifiedFileDeposit(folderFiles.get(i));
 				this.modifiedTime = new Date().getTime();
 			}
 		}
 	}
-	private void storeModifiedFileDeposits(File file) {
+	private void storeModifiedFileDeposit(File file) {
 		String fName = XmlDataBaseConvertor.convertDbName(file.getPath());
 		dbm.delete("DELETE FROM Deposits WHERE FileName LIKE '"+fName+"'");
 		xmlDbConvertor.parseAndStoreDeposit(file);

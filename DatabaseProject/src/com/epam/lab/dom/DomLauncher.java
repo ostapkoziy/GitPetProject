@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 
 public class DomLauncher {
 	private static final Logger LOG = Logger.getLogger(DomLauncher.class);
-	public void parse(){
+	public void parse(String fName){
 		DomHandler domHandler = new DomHandler();
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(false);
@@ -20,7 +20,7 @@ public class DomLauncher {
 		DocumentBuilder dBuilder;
 		try {
 			dBuilder = factory.newDocumentBuilder();
-			doc = dBuilder.parse("resources\\clients.xml");
+			doc = dBuilder.parse("resources\\for_update\\deposit_2.xml");
 		} catch (ParserConfigurationException e) {
 			LOG.error("DOM Parser Config Error!",e);
 		} catch (IOException e) {
