@@ -6,9 +6,7 @@ import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -107,8 +105,8 @@ public class SearchMenu implements SubMenu {
 					System.out.format("%-20s\t\t%30s\t%20s\n", name, adress,
 							phone);
 				}
-				rs.close();		
-				System.out.println("\n"+userName+" has next deposits: \n");
+				rs.close();
+				System.out.println("\n" + userName + " has next deposits: \n");
 				this.findDeposit(1, userName);
 			} catch (SQLException e) {
 				LOG.error("SQL Error while searching");
@@ -160,31 +158,29 @@ public class SearchMenu implements SubMenu {
 			this.show();
 		}
 		if ((i > 0) && (i < 4)) {
-			this.findDeposit(i,value);
-			}
-			this.show();
+			this.findDeposit(i, value);
 		}
+		this.show();
+	}
 
 	private void findDeposit(int i, String value) {
 		DbManager dbm = new DbManager();
 		ResultSet rs = dbm
 				.select("SELECT UserName, Percent, Cash FROM Deposits "
-						+ "WHERE " + depositMap.get(i) + " LIKE '" + value
-						+ "'");
+						+ "WHERE UserName LIKE '" + value + "'");
 		try {
 			while (rs.next()) {
 				String name = rs.getString("UserName");
 				String cash = rs.getString("Cash");
 				String percent = rs.getString("Percent");
-				System.out.format("%-20s\t\t%30s\t%20s\n", name, cash,
-						percent);
+				System.out.format("%-20s\t\t%30s\t%20s\n", name, cash, percent);
 			}
 			rs.close();
 		} catch (SQLException e) {
 			LOG.error("SQL Error while searching");
 		} catch (NullPointerException e) {
 			System.out.println("No results to display!");
-		
-	}
+
+		}
 	}
 }

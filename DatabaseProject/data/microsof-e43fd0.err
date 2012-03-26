@@ -558,3 +558,34 @@ Version: '5.5.14'  socket: ''  port: 3306  MySQL Community Server (GPL)
 120325  9:25:46 [Note] Event Scheduler: Loaded 0 events
 120325  9:25:46 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: ready for connections.
 Version: '5.5.14'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120325 23:54:15 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: Normal shutdown
+
+120325 23:54:19 [Note] Event Scheduler: Purging the queue. 0 events
+120325 23:54:28  InnoDB: Starting shutdown...
+120325 23:54:35  InnoDB: Shutdown completed; log sequence number 1703097
+120325 23:54:36 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: Shutdown complete
+
+120326  7:28:40 [Note] Plugin 'FEDERATED' is disabled.
+120326  7:28:41 InnoDB: The InnoDB memory heap is disabled
+120326  7:28:41 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120326  7:28:41 InnoDB: Compressed tables use zlib 1.2.3
+120326  7:28:41 InnoDB: Initializing buffer pool, size = 17.0M
+120326  7:28:41 InnoDB: Completed initialization of buffer pool
+120326  7:28:42 InnoDB: highest supported file format is Barracuda.
+120326  7:28:49  InnoDB: Waiting for the background threads to start
+120326  7:28:50 InnoDB: 1.1.8 started; log sequence number 1703097
+120326  7:28:55 [Note] Event Scheduler: Loaded 0 events
+120326  7:28:55 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: ready for connections.
+Version: '5.5.14'  socket: ''  port: 3306  MySQL Community Server (GPL)
+120326  9:07:18 [Note] Plugin 'FEDERATED' is disabled.
+120326  9:07:18 InnoDB: The InnoDB memory heap is disabled
+120326  9:07:18 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+120326  9:07:18 InnoDB: Compressed tables use zlib 1.2.3
+120326  9:07:18 InnoDB: Initializing buffer pool, size = 17.0M
+120326  9:07:18 InnoDB: Completed initialization of buffer pool
+120326  9:07:19 InnoDB: highest supported file format is Barracuda.
+120326  9:07:23  InnoDB: Waiting for the background threads to start
+120326  9:07:24 InnoDB: 1.1.8 started; log sequence number 1703097
+120326  9:07:33 [Note] Event Scheduler: Loaded 0 events
+120326  9:07:33 [Note] C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld: ready for connections.
+Version: '5.5.14'  socket: ''  port: 3306  MySQL Community Server (GPL)

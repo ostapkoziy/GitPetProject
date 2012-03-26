@@ -1,6 +1,8 @@
 package com.epam.lab.dom;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -10,9 +12,11 @@ import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.epam.lab.model.Deposit;
+
 public class DomLauncher {
 	private static final Logger LOG = Logger.getLogger(DomLauncher.class);
-	public void parse(String fName){
+	public List<Deposit> parse(File file){
 		DomHandler domHandler = new DomHandler();
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setValidating(false);
@@ -20,7 +24,7 @@ public class DomLauncher {
 		DocumentBuilder dBuilder;
 		try {
 			dBuilder = factory.newDocumentBuilder();
-			doc = dBuilder.parse("resources\\for_update\\deposit_2.xml");
+			doc = dBuilder.parse(file.getPath());
 		} catch (ParserConfigurationException e) {
 			LOG.error("DOM Parser Config Error!",e);
 		} catch (IOException e) {
@@ -28,6 +32,12 @@ public class DomLauncher {
 		} catch (SAXException e) {
 			LOG.error("Sax exception while DOM parsing!",e);
 		}
-		domHandler.printXML(doc.getFirstChild());
+		List<Deposit> arg = domHandler.parseDocument(file);
+		for(Deposit i : arg){
+			i.setFileName(file.getPath());
+			i.setLastModified(file.lastModified());
+		}
+		return arg;
+		
 	}
 }

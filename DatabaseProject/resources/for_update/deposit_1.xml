@@ -5,9 +5,9 @@
 		<cash>8000</cash>
 		<percent>3.5</percent>
 	</Deposit>
-		<Deposit>
+	<Deposit>
 		<client>Makoviak Roman</client>
 		<cash>10000</cash>
 		<percent>4.0</percent>
 	</Deposit>
-</Depositss>
+</Deposits>

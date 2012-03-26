@@ -8509,3 +8509,11 @@ java.io.FileNotFoundException: D:\prog\git\GitPetProject\DatabaseProject\resourc
 	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:177)
 	at com.epam.lab.dom.DomLauncher.parse(DomLauncher.java:23)
 	at com.epam.lab.start.Launcher.main(Launcher.java:21)
+0    [main] INFO  com.epam.lab.dom.DomHandler  - Sax exception occured
+org.xml.sax.SAXParseException; systemId: file:/D:/prog/git/GitPetProject/DatabaseProject/resources/for_update/deposit_1.xml; lineNumber: 13; columnNumber: 11; The end-tag for element type "Deposits" must end with a '>' delimiter.
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:254)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
+	at com.epam.lab.dom.DomHandler.parseDocument(DomHandler.java:31)
+	at com.epam.lab.dom.DomLauncher.parse(DomLauncher.java:34)
+	at com.epam.lab.start.Launcher.main(Launcher.java:21)

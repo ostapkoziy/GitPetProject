@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.epam.lab.dom.DomLauncher;
 import com.epam.lab.model.Client;
 import com.epam.lab.model.Deposit;
 import com.epam.lab.sax.SaxLauncher;
@@ -45,10 +46,8 @@ public class XmlDataBaseConvertor {
 	
 	public void parseAndStoreDeposit(File file) {
 		SaxLauncher saxLauncher = new SaxLauncher();
-		saxLauncher.parseDeposit(file);
-
-		List<Deposit> depositList = new ArrayList<Deposit>();
-		depositList = SaxLauncher.deposits;
+		DomLauncher domLauncher = new DomLauncher();
+		List<Deposit> depositList = domLauncher.parse(file);
 		this.storeDepositList(depositList);
 	}
 	

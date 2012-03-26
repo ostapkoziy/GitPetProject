@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Deposits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Deposit>
+		<client>Girniak Anastasia</client>
+		<cash>11700</cash>
+		<percent>4.5</percent>
+	</Deposit>
+	<Deposit>
+		<client>Ivan Khmilevskiy</client>
+		<cash>350</cash>
+		<percent>2.2</percent>
+	</Deposit>
+	<Deposit>
+		<client>Gelesh Yura</client>
+		<cash>2000</cash>
+		<percent>5.0</percent>
+	</Deposit>
+</Deposits>
